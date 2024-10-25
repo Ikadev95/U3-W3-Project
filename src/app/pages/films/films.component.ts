@@ -3,6 +3,7 @@ import { iFilm } from '../../interfaces/i-film';
 import { Component, OnInit } from '@angular/core';
 import { FilmsService } from '../../services/films.service';
 import { AuthsrvService } from '../../auth/authsrv.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-films',
@@ -14,7 +15,8 @@ export class FilmsComponent implements OnInit {
   films:iFilm[] = []
   id!: number
 
-  constructor(private FilmsSvc : FilmsService ,private prefSvc: FavoritesService, private authSvc: AuthsrvService){}
+  constructor(private FilmsSvc : FilmsService ,private prefSvc: FavoritesService, private authSvc: AuthsrvService
+  ){}
 
   ngOnInit(): void {
 
