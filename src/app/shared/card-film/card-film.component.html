@@ -1,0 +1,7 @@
+<div class="card border-0 text-center">
+  <img [src]= 'film.link_immagine' class="card-img-top" alt="{{film.titolo}}">
+  <i *ngIf="fav" class=" fa-heart fa-regular heart" (click) ="addToFav()" ></i>
+  <i *ngIf="!fav"class=" fa-heart fa-solid heart" (click) ="addToFav()"></i>
+  <div class="card-body">
+    <h5 class="card-title">{{film.titolo}}</h5>
+  </div>

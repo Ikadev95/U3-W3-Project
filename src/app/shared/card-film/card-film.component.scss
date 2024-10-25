@@ -1,0 +1,14 @@
+img{
+  max-height: 400px;
+  object-fit: cover;
+  object-position: center;
+}
+.heart{
+  font-size: 30px;
+  color: red;
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  cursor: pointer;
+
+}
