@@ -1,4 +1,4 @@
-import { Inject, Injectable, Injector } from '@angular/core';
+import { Injectable } from '@angular/core';
 import {
   HttpRequest,
   HttpHandler,
@@ -14,22 +14,20 @@ export class TokenInterceptor implements HttpInterceptor {
   constructor(private authSvc: AuthsrvService) {}
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
-
-    if(request.url.includes('login')){
-      return next.handle(request);
-    }
+    console.log('Intercepted request:', request);
 
     return this.authSvc.authSubject$.pipe(switchMap(accessData => {
+      console.log('Access Data:', accessData);
 
-      if(!accessData){
-        return next.handle(request)
+      if (!accessData || !accessData.accessToken) {
+        return next.handle(request);
       }
 
       const newRequest = request.clone({
-        headers: request.headers.append('Authorization',`Bearer ${accessData.accessToken}`)
-      })
+        headers: request.headers.set('Authorization', `Bearer ${accessData.accessToken}`)
+      });
 
       return next.handle(newRequest);
-    }))
+    }));
   }
 }

@@ -16,18 +16,16 @@ export class CardFilmComponent implements OnInit {
   constructor(private favSvc: FavoritesService, private authSvc: AuthsrvService) {}
 
   ngOnInit(): void {
-    // Subscribe to favorite updates
+
     this.favSvc.favs$.subscribe(favObj => {
-      // Update favorite status based on the current film
+
       this.fav = favObj.film.some(f => f.id === this.film.id);
     });
 
-    // Subscribe to user authentication state
+
     this.authSvc.user$.subscribe(user => {
       if (user) {
-        // Update userId in the favorites service
         this.favSvc.favObj.userId = user.id;
-        // Load user favorites
         this.favSvc.loadUserFavorites(user.id);
       }
     });

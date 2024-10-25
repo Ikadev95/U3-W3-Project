@@ -10,32 +10,31 @@ import { Observable, BehaviorSubject } from 'rxjs';
 export class FavoritesService {
   private apiUrl = 'http://localhost:3000/favorites';
 
-  // Oggetto per gestire i preferiti dell'utente
+
   favObj: iFav = {
     userId: -1,
     film: []
   };
 
-  // Comportamento per tenere traccia degli aggiornamenti dei preferiti
+
   private favSubject = new BehaviorSubject<iFav>(this.favObj);
   favs$ = this.favSubject.asObservable();
 
   constructor(private http: HttpClient) {}
 
-  // Carica i preferiti dell'utente all'inizio
+
   loadUserFavorites(userId: number): void {
     this.getFavsById(userId).subscribe(
       (favs) => {
         if (favs) {
-          this.favObj = favs; // Aggiorna il favObj con i preferiti caricati
-          this.favSubject.next(this.favObj); // Notifica i componenti che ascoltano
-          console.log('Preferiti caricati:', this.favObj);
+          this.favObj = favs;
+          this.favSubject.next(this.favObj);
         }
       }
     );
   }
 
-  // Aggiungi un film ai preferiti
+
   addToFavs(film: iFilm) {
     const filmExists = this.favObj.film.some(f => f.id === film.id);
 
@@ -43,14 +42,14 @@ export class FavoritesService {
       this.favObj.film.push(film);
       console.log('Film aggiunto ai preferiti:', film);
     } else {
-      // Rimuovi il film dai preferiti
+
       this.favObj.film = this.favObj.film.filter(f => f.id !== film.id);
       console.log('Film rimosso dai preferiti:', film);
     }
 
-    // Aggiorna il BehaviorSubject con il nuovo stato dei preferiti
+
     this.favSubject.next(this.favObj);
-    this.AddFavToDb(); // Questa funzione aggiornerà il DB con i nuovi preferiti
+    this.AddFavToDb();
     console.log(this.favObj);
   }
 
@@ -84,12 +83,20 @@ export class FavoritesService {
     return this.http.get<iFav>(`${this.apiUrl}/${userId}`);
   }
 
-  resetFavorites(): void {
+  resetFavorites(id: number): void {
+    // Imposta l'oggetto dei preferiti vuoto per l'utente specificato
     this.favObj = {
-      userId: -1,
+      userId: id,
       film: []
     };
-    this.favSubject.next(this.favObj); // Notifica i componenti che ascoltano
+
+    console.log('Resetting favorites for user:', id);
+
+    // Notifica i componenti ascoltatori
+    this.favSubject.next(this.favObj);
+
+    // Invia i preferiti aggiornati al database
+    this.postFavsToDb();
   }
 
 }
