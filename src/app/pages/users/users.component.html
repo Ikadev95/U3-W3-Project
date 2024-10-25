@@ -1,6 +1,7 @@
-<div class="container">
-  <ul *ngFor="let user of users">
-    <li>email: {{user.email}}</li>
+<div class="container py-3">
+  <h2>Users</h2>
+  <ul >
+    <li *ngFor="let user of users">email: {{user.email}}</li>
   </ul>
 </div>
 

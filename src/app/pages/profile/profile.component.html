@@ -1,6 +1,8 @@
-<div class="container">
-
-  <p>Nome:{{user.name}}</p>
-  <a (click)="logout()" class="btn btn-lg btn-danger btn-block" >Logout</a>
-
+<div class="container py-4">
+  <h2>Profile</h2>
+  <div class="text-center">
+    <p>Nome: {{user.name}}</p>
+    <p>Email: {{user.email}}</p>
+    <a (click)="logout()" class="btn btn-lg btn-danger btn-block" >Logout</a>
+  </div>
 </div>

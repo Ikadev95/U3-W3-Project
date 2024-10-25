@@ -11,6 +11,12 @@
       "password": "$2a$10$KL3k3mUcB6pnaMQW9b1Wl.ZGzbbWWKUm/fFCQWPnd5nSwSYK9UHS6",
       "name": "pippi",
       "id": 2
+    },
+    {
+      "email": "prov@gmail.com",
+      "password": "$2a$10$jjsOYMzr7FX45F9gGs34xubN9LW0dIvUwMeiqfiBtvwzS5cnGumny",
+      "name": "papi",
+      "id": 3
     }
   ],
   "movies-popular": [
@@ -77,24 +83,6 @@
   ],
   "favorites": [
     {
-      "userId": 1,
-      "film": [
-        {
-          "id": 2,
-          "titolo": "The Matrix",
-          "data_di_uscita": "31-03-1999",
-          "link_immagine": "https://c8.alamy.com/compit/2jh2n9a/pantoliano-fishburne-reeves-poster-la-matrice-1999-2jh2n9a.jpg"
-        },
-        {
-          "id": 3,
-          "titolo": "Interstellar",
-          "data_di_uscita": "07-11-2014",
-          "link_immagine": "https://m.media-amazon.com/images/I/91vIHsL-zjL._AC_UF1000,1000_QL80_.jpg"
-        }
-      ],
-      "id": 1
-    },
-    {
       "userId": 2,
       "film": [
         {
@@ -123,6 +111,48 @@
         }
       ],
       "id": 2
+    },
+    {
+      "userId": 1,
+      "film": [
+        {
+          "id": 2,
+          "titolo": "The Matrix",
+          "data_di_uscita": "31-03-1999",
+          "link_immagine": "https://c8.alamy.com/compit/2jh2n9a/pantoliano-fishburne-reeves-poster-la-matrice-1999-2jh2n9a.jpg"
+        },
+        {
+          "id": 3,
+          "titolo": "Interstellar",
+          "data_di_uscita": "07-11-2014",
+          "link_immagine": "https://m.media-amazon.com/images/I/91vIHsL-zjL._AC_UF1000,1000_QL80_.jpg"
+        }
+      ],
+      "id": 1
+    },
+    {
+      "userId": 3,
+      "film": [
+        {
+          "id": 3,
+          "titolo": "Interstellar",
+          "data_di_uscita": "07-11-2014",
+          "link_immagine": "https://m.media-amazon.com/images/I/91vIHsL-zjL._AC_UF1000,1000_QL80_.jpg"
+        },
+        {
+          "id": 2,
+          "titolo": "The Matrix",
+          "data_di_uscita": "31-03-1999",
+          "link_immagine": "https://c8.alamy.com/compit/2jh2n9a/pantoliano-fishburne-reeves-poster-la-matrice-1999-2jh2n9a.jpg"
+        },
+        {
+          "id": 1,
+          "titolo": "Inception",
+          "data_di_uscita": "16-07-2010",
+          "link_immagine": "https://i.ebayimg.com/images/g/JfYAAOSwIOtbatHS/s-l1200.jpg"
+        }
+      ],
+      "id": 3
     }
   ]
 }
