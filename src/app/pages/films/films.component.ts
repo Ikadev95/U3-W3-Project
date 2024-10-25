@@ -29,7 +29,7 @@ export class FilmsComponent implements OnInit {
       favs => console.log(favs)
     )
     this.prefSvc.getFavsById(this.id).subscribe(
-      favs => console.log(favs)
+      fav => this.prefSvc.favObj = fav
     )
   }
 

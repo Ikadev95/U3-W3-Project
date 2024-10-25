@@ -15,6 +15,10 @@ export class TokenInterceptor implements HttpInterceptor {
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
 
+    if(request.url.includes('login')){
+      return next.handle(request);
+    }
+
     return this.authSvc.authSubject$.pipe(switchMap(accessData => {
 
       if(!accessData){

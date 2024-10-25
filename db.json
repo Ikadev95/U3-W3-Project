@@ -5,6 +5,12 @@
       "password": "$2a$10$S6uKPGlrM0IHvRbcZi3wyO0sHDuL5kMuQ7b6s/.U5J28tz8iOGqgq",
       "name": "Fede",
       "id": 1
+    },
+    {
+      "email": "prov@gmail.com",
+      "password": "$2a$10$kxQRtla8PcO0DpKXV/romuhfW56j.AoSoPW4pgkUIEwys7Co4AwZG",
+      "name": "pippo",
+      "id": 2
     }
   ],
   "movies-popular": [
@@ -74,16 +80,34 @@
       "userId": 1,
       "film": [
         {
-          "id": 3,
-          "titolo": "Interstellar",
-          "data_di_uscita": "07-11-2014",
-          "link_immagine": "https://m.media-amazon.com/images/I/91vIHsL-zjL._AC_UF1000,1000_QL80_.jpg"
+          "id": 7,
+          "titolo": "Jurassic Park",
+          "data_di_uscita": "11-06-1993",
+          "link_immagine": "https://i.ebayimg.com/00/s/MTYwMFgxMDk3/z/fl4AAOSwakxdOOVA/$_57.JPG?set_id=8800005007"
         },
         {
-          "id": 4,
-          "titolo": "The Dark Knight",
-          "data_di_uscita": "2008-07-18",
-          "link_immagine": "https://m.media-amazon.com/images/I/81rGCm0PyHL.jpg"
+          "id": 6,
+          "titolo": "Star Wars: Episode IV - A New Hope",
+          "data_di_uscita": "25-05-1977",
+          "link_immagine": "https://i.ebayimg.com/images/g/7o0AAOSweE9j9C4U/s-l1200.jpg"
+        },
+        {
+          "id": 8,
+          "titolo": "E.T. the Extra-Terrestrial",
+          "data_di_uscita": "11-06-1982",
+          "link_immagine": "https://i.ebayimg.com/images/g/rnkAAOSwyvBjOBm0/s-l1200.jpg"
+        },
+        {
+          "id": 5,
+          "titolo": "Pulp Fiction",
+          "data_di_uscita": "1994-10-14",
+          "link_immagine": "https://m.media-amazon.com/images/I/718LfFW+tIL._AC_UF894,1000_QL80_.jpg"
+        },
+        {
+          "id": 1,
+          "titolo": "Inception",
+          "data_di_uscita": "16-07-2010",
+          "link_immagine": "https://i.ebayimg.com/images/g/JfYAAOSwIOtbatHS/s-l1200.jpg"
         }
       ],
       "id": 1

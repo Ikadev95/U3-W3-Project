@@ -47,7 +47,10 @@ export class AuthsrvService {
 
   // Metodo per registrare un nuovo utente
   register(newUser: Partial<iUser>) {
-    return this.http.post<iAccessData>(this.registerUrl, newUser);
+    return this.http.post<iAccessData>(this.registerUrl, newUser)
+      .pipe(tap(() => {
+        this.svc.resetFavorites(); // Reset dei preferiti per il nuovo utente
+      }));
   }
 
   // Metodo per il login
