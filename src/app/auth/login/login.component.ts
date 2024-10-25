@@ -27,7 +27,6 @@ export class LoginComponent implements OnInit {
   login(){
     this.authSvc.login(this.formData)
     .subscribe(data =>{
-      console.log('ok')
       this.router.navigate(['films'])
     })
   }
