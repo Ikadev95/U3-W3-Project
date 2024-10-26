@@ -17,6 +17,18 @@
       "password": "$2a$10$jjsOYMzr7FX45F9gGs34xubN9LW0dIvUwMeiqfiBtvwzS5cnGumny",
       "name": "papi",
       "id": 3
+    },
+    {
+      "email": "ika@gmail.com",
+      "password": "$2a$10$bhqMwETNxBDZBKqFQbh6BucbxrqBlmrdSwRHrgyDsZUGQ1xXbYif6",
+      "name": "prova",
+      "id": 4
+    },
+    {
+      "email": "ciccio@gmail.com",
+      "password": "$2a$10$8oTJyWMQzDqgqIbPjBB4SOdgKJA80Vz1Dgsy3UcwYRPbnmL.UFRCe",
+      "name": "ciccio",
+      "id": 5
     }
   ],
   "movies-popular": [
@@ -82,6 +94,93 @@
     }
   ],
   "favorites": [
-
+    {
+      "userId": 3,
+      "film": [
+        {
+          "id": 3,
+          "titolo": "Interstellar",
+          "data_di_uscita": "07-11-2014",
+          "link_immagine": "https://m.media-amazon.com/images/I/91vIHsL-zjL._AC_UF1000,1000_QL80_.jpg"
+        },
+        {
+          "id": 2,
+          "titolo": "The Matrix",
+          "data_di_uscita": "31-03-1999",
+          "link_immagine": "https://c8.alamy.com/compit/2jh2n9a/pantoliano-fishburne-reeves-poster-la-matrice-1999-2jh2n9a.jpg"
+        },
+        {
+          "id": 1,
+          "titolo": "Inception",
+          "data_di_uscita": "16-07-2010",
+          "link_immagine": "https://i.ebayimg.com/images/g/JfYAAOSwIOtbatHS/s-l1200.jpg"
+        }
+      ],
+      "id": 3
+    },
+    {
+      "userId": 2,
+      "film": [],
+      "id": 2
+    },
+    {
+      "userId": 4,
+      "film": [
+        {
+          "id": 4,
+          "titolo": "The Dark Knight",
+          "data_di_uscita": "2008-07-18",
+          "link_immagine": "https://m.media-amazon.com/images/I/81rGCm0PyHL.jpg"
+        },
+        {
+          "id": 3,
+          "titolo": "Interstellar",
+          "data_di_uscita": "07-11-2014",
+          "link_immagine": "https://m.media-amazon.com/images/I/91vIHsL-zjL._AC_UF1000,1000_QL80_.jpg"
+        }
+      ],
+      "id": 4
+    },
+    {
+      "userId": 5,
+      "film": [],
+      "id": 5
+    },
+    {
+      "userId": 1,
+      "film": [
+        {
+          "id": 2,
+          "titolo": "The Matrix",
+          "data_di_uscita": "31-03-1999",
+          "link_immagine": "https://c8.alamy.com/compit/2jh2n9a/pantoliano-fishburne-reeves-poster-la-matrice-1999-2jh2n9a.jpg"
+        },
+        {
+          "id": 1,
+          "titolo": "Inception",
+          "data_di_uscita": "16-07-2010",
+          "link_immagine": "https://i.ebayimg.com/images/g/JfYAAOSwIOtbatHS/s-l1200.jpg"
+        },
+        {
+          "id": 10,
+          "titolo": "Harry Potter and the Sorcerer's Stone",
+          "data_di_uscita": "16-11-2001",
+          "link_immagine": "https://cdn11.bigcommerce.com/s-yzgoj/images/stencil/1280x1280/products/2909816/5921412/MOVGF1453__74158.1679571937.jpg?c=2"
+        },
+        {
+          "id": 3,
+          "titolo": "Interstellar",
+          "data_di_uscita": "07-11-2014",
+          "link_immagine": "https://m.media-amazon.com/images/I/91vIHsL-zjL._AC_UF1000,1000_QL80_.jpg"
+        },
+        {
+          "id": 4,
+          "titolo": "The Dark Knight",
+          "data_di_uscita": "2008-07-18",
+          "link_immagine": "https://m.media-amazon.com/images/I/81rGCm0PyHL.jpg"
+        }
+      ],
+      "id": 1
+    }
   ]
 }

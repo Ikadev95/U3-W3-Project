@@ -64,7 +64,7 @@ register(newUser: Partial<iUser>) {
     return this.http.post<iAccessData>(this.loginUrl, authData)
       .pipe(tap(data => {
         this.authSubject$.next(data);
-        sessionStorage.setItem('data', JSON.stringify(data));
+        localStorage.setItem('data', JSON.stringify(data));
         const expDate = this.jwtHelper.getTokenExpirationDate(data.accessToken);
         if (!expDate) return;
         this.autoLogout(expDate);
@@ -75,7 +75,7 @@ register(newUser: Partial<iUser>) {
   logout() {
     this.svc.AddFavToDb();
     this.authSubject$.next(null);
-    sessionStorage.removeItem('data');
+    localStorage.removeItem('data');
     this.router.navigate(['/auth/login']);
 
   }
@@ -91,14 +91,14 @@ register(newUser: Partial<iUser>) {
 
 
   restoreUser() {
-    const user: string | null = sessionStorage.getItem('data');
+    const user: string | null = localStorage.getItem('data');
     if (!user) return;
 
     const data: iAccessData = JSON.parse(user);
 
 
     if (this.jwtHelper.isTokenExpired(data.accessToken)) {
-      sessionStorage.removeItem('data');
+      localStorage.removeItem('data');
       return;
     }
 

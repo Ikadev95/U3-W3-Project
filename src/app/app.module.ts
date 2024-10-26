@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { HTTP_INTERCEPTORS, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, provideHttpClient, withFetch, withInterceptorsFromDi } from '@angular/common/http';
 import { TokenInterceptor } from './auth/token.interceptor';
 
 @NgModule({
@@ -19,7 +19,9 @@ import { TokenInterceptor } from './auth/token.interceptor';
     NgbModule
   ],
   providers: [
-    provideHttpClient(withInterceptorsFromDi()),
+    provideHttpClient(
+      withInterceptorsFromDi(),
+    ),
     {
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptor,

@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { iFav } from '../interfaces/i-fav';
 import { iFilm } from '../interfaces/i-film';
 import { HttpClient } from '@angular/common/http';
-import { Observable, BehaviorSubject, filter, tap } from 'rxjs';
+import { Observable, BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -24,14 +24,14 @@ export class FavoritesService {
 
 
   loadUserFavorites(userId: number): void {
-    this.getFavsById(userId).pipe(
-      filter(Boolean),
-      tap((favs) => {
-        console.log(favs)
-        this.favObj = favs;
-        this.favSubject.next(this.favObj);
-      })
-    ).subscribe();
+    this.getFavsById(userId).subscribe(
+      (favs) => {
+        if (favs) {
+          this.favObj = favs;
+          this.favSubject.next(this.favObj);
+        }
+      }
+    );
   }
 
 
