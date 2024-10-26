@@ -1,20 +1,19 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CardFilmComponent } from './card-film/card-film.component';
+
+import { DetailsRoutingModule } from './details-routing.module';
+import { DetailsComponent } from './details.component';
 import { RouterModule } from '@angular/router';
 
 
 @NgModule({
   declarations: [
-    CardFilmComponent
+    DetailsComponent
   ],
   imports: [
     CommonModule,
-    RouterModule
-  ],
-  exports:[
-    CardFilmComponent,
+    DetailsRoutingModule,
     RouterModule
   ]
 })
-export class SharedModule { }
+export class DetailsModule { }

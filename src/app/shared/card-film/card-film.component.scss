@@ -1,5 +1,5 @@
 img{
-  max-height: 400px;
+  height: 400px;
   object-fit: cover;
   object-position: center;
 }
@@ -16,4 +16,12 @@ img{
   background-color: rgba(0, 0, 0, 0.54);
   color: white;
   height: 100%;
+}
+a{
+  font-size: 24px;
+}
+a:hover{
+  transform: scale(1.2);
+  transition-duration: 1s;
+  cursor: pointer;
 }

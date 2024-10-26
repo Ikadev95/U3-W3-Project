@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { iFilm } from '../../interfaces/i-film';
 import { FavoritesService } from '../../services/favorites.service';
 import { AuthsrvService } from '../../auth/authsrv.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-card-film',
@@ -13,7 +14,7 @@ export class CardFilmComponent implements OnInit {
 
   fav: boolean = true;
 
-  constructor(private favSvc: FavoritesService, private authSvc: AuthsrvService) {}
+  constructor(private favSvc: FavoritesService, private authSvc: AuthsrvService, private router: Router) {}
 
   ngOnInit(): void {
 
@@ -33,4 +34,8 @@ export class CardFilmComponent implements OnInit {
   updateToFav(): void {
     this.favSvc.updateFavs(this.film);
   }
+  details() {
+    this.router.navigate(['/details', this.film.id]); // Passa l'ID del film
+}
+
 }

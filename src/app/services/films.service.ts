@@ -8,10 +8,15 @@ import { iFilm } from '../interfaces/i-film';
 })
 export class FilmsService {
 
-  constructor(private http:HttpClient) { }
+  constructor(private http: HttpClient) { }
 
-  getAllFilms(){
-    return this.http.get<iFilm[]>(environment.filmsUrl)
+  // Ottieni tutti i film
+  getAllFilms() {
+    return this.http.get<iFilm[]>(environment.filmsUrl);
   }
 
+  // Ottieni un film per ID
+  getFilmById(id: number) {
+    return this.http.get<iFilm>(`${environment.filmsUrl}/${id}`); // Assicurati che la tua API supporti questo endpoint
+  }
 }
