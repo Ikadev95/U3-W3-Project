@@ -129,13 +129,19 @@
       "id": 5
     },
     {
-      "userId": 4,
+      "userId": 1,
       "film": [
         {
           "id": 1,
           "titolo": "Inception",
           "data_di_uscita": "16-07-2010",
           "link_immagine": "https://i.ebayimg.com/images/g/JfYAAOSwIOtbatHS/s-l1200.jpg"
+        },
+        {
+          "id": 3,
+          "titolo": "Interstellar",
+          "data_di_uscita": "07-11-2014",
+          "link_immagine": "https://m.media-amazon.com/images/I/91vIHsL-zjL._AC_UF1000,1000_QL80_.jpg"
         },
         {
           "id": 4,
@@ -144,67 +150,18 @@
           "link_immagine": "https://m.media-amazon.com/images/I/81rGCm0PyHL.jpg"
         },
         {
-          "id": 3,
-          "titolo": "Interstellar",
-          "data_di_uscita": "07-11-2014",
-          "link_immagine": "https://m.media-amazon.com/images/I/91vIHsL-zjL._AC_UF1000,1000_QL80_.jpg"
-        },
-        {
-          "id": 10,
-          "titolo": "Harry Potter and the Sorcerer's Stone",
-          "data_di_uscita": "16-11-2001",
-          "link_immagine": "https://cdn11.bigcommerce.com/s-yzgoj/images/stencil/1280x1280/products/2909816/5921412/MOVGF1453__74158.1679571937.jpg?c=2"
-        }
-      ],
-      "id": 4
-    },
-    {
-      "userId": 1,
-      "film": [
-        {
-          "id": 10,
-          "titolo": "Harry Potter and the Sorcerer's Stone",
-          "data_di_uscita": "16-11-2001",
-          "link_immagine": "https://cdn11.bigcommerce.com/s-yzgoj/images/stencil/1280x1280/products/2909816/5921412/MOVGF1453__74158.1679571937.jpg?c=2"
-        },
-        {
-          "id": 7,
-          "titolo": "Jurassic Park",
-          "data_di_uscita": "11-06-1993",
-          "link_immagine": "https://i.ebayimg.com/00/s/MTYwMFgxMDk3/z/fl4AAOSwakxdOOVA/$_57.JPG?set_id=8800005007"
-        },
-        {
-          "id": 6,
-          "titolo": "Star Wars: Episode IV - A New Hope",
-          "data_di_uscita": "25-05-1977",
-          "link_immagine": "https://i.ebayimg.com/images/g/7o0AAOSweE9j9C4U/s-l1200.jpg"
-        },
-        {
-          "id": 5,
-          "titolo": "Pulp Fiction",
-          "data_di_uscita": "1994-10-14",
-          "link_immagine": "https://m.media-amazon.com/images/I/718LfFW+tIL._AC_UF894,1000_QL80_.jpg"
-        },
-        {
-          "id": 3,
-          "titolo": "Interstellar",
-          "data_di_uscita": "07-11-2014",
-          "link_immagine": "https://m.media-amazon.com/images/I/91vIHsL-zjL._AC_UF1000,1000_QL80_.jpg"
-        },
-        {
           "id": 2,
           "titolo": "The Matrix",
           "data_di_uscita": "31-03-1999",
           "link_immagine": "https://c8.alamy.com/compit/2jh2n9a/pantoliano-fishburne-reeves-poster-la-matrice-1999-2jh2n9a.jpg"
-        },
-        {
-          "id": 1,
-          "titolo": "Inception",
-          "data_di_uscita": "16-07-2010",
-          "link_immagine": "https://i.ebayimg.com/images/g/JfYAAOSwIOtbatHS/s-l1200.jpg"
         }
       ],
       "id": 1
+    },
+    {
+      "userId": 4,
+      "film": [],
+      "id": 4
     }
   ]
 }

@@ -27,6 +27,13 @@ export class FilmsComponent implements OnInit {
     this.prefSvc.getFavsById(this.id).subscribe(
       fav => this.prefSvc.favObj = fav
     )
+
+    this.authSvc.user$.subscribe(user => {
+      if (user) {
+        this.prefSvc.favObj.userId = user.id;
+        this.prefSvc.loadUserFavorites(user.id);
+      }
+    });
   }
 
 

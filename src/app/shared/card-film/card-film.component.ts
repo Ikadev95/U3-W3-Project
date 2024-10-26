@@ -22,13 +22,6 @@ export class CardFilmComponent implements OnInit {
       this.fav = favObj.film.some(f => f.id === this.film.id);
     });
 
-
-    this.authSvc.user$.subscribe(user => {
-      if (user) {
-        this.favSvc.favObj.userId = user.id;
-        this.favSvc.loadUserFavorites(user.id);
-      }
-    });
   }
 
   updateToFav(): void {

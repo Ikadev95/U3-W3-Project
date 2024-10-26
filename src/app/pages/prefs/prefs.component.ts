@@ -6,23 +6,26 @@ import { AuthsrvService } from '../../auth/authsrv.service';
 @Component({
   selector: 'app-prefs',
   templateUrl: './prefs.component.html',
-  styleUrl: './prefs.component.scss'
+  styleUrls: ['./prefs.component.scss'] // Corretto il nome da "styleUrl" a "styleUrls"
 })
-export class PrefsComponent implements OnInit{
-  films:iFilm[] = []
-  id!:number
-  constructor(private prefSvc: FavoritesService, private authSvc: AuthsrvService){}
+export class PrefsComponent implements OnInit {
+  films: iFilm[] = [];
+  id!: number;
+
+  constructor(private prefSvc: FavoritesService, private authSvc: AuthsrvService) {}
 
   ngOnInit(): void {
-
-    this.prefSvc.favs$.subscribe(
-      film => {
-        this.films = film.film
-      }
-    )
+    // Carica i preferiti dell'utente corrente
     this.authSvc.user$.subscribe(user => {
-      if (user) {this.id = user.id}
-    })
-  }
+      if (user) {
+        this.id = user.id;
+        this.prefSvc.loadUserFavorites(this.id); // Carica i preferiti quando l'utente è disponibile
+      }
+    });
 
+    // Iscriviti ai cambiamenti nei preferiti
+    this.prefSvc.favs$.subscribe(favObj => {
+      this.films = favObj.film; // Crea una copia dell'array di film
+    });
+  }
 }
