@@ -13,10 +13,17 @@ export class NavbarComponent implements OnInit {
 
   constructor(private authSrv: AuthsrvService) {}
 
+  isMenuOpen: boolean = false;
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
+
   ngOnInit(): void {
     this.authSrv.isLoggedIn$.subscribe(isLoggedIn => {
       this.logged = isLoggedIn;
     });
+
+
   }
 
 
