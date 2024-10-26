@@ -35,7 +35,7 @@ export class FavoritesService {
   }
 
 
-  addToFavs(film: iFilm) {
+  updateFavs(film: iFilm) {
     const filmExists = this.favObj.film.some(f => f.id === film.id);
 
     if (!filmExists) {
@@ -49,7 +49,7 @@ export class FavoritesService {
 
 
     this.favSubject.next(this.favObj);
-    this.AddFavToDb();
+    this.updateFavsToDb();
     console.log(this.favObj);
   }
 
@@ -57,7 +57,7 @@ export class FavoritesService {
     return this.http.delete<iFav>(`${this.apiUrl}/${userId}`);
   }
 
-  AddFavToDb() {
+  updateFavsToDb() {
     this.getFavsById(this.favObj.userId).subscribe(existingFavs => {
       if (existingFavs) {
         this.removeToFavsById(this.favObj.userId).subscribe(() => {
@@ -84,7 +84,7 @@ export class FavoritesService {
   }
 
   resetFavorites(id: number): void {
-    // Imposta l'oggetto dei preferiti vuoto per l'utente specificato
+
     this.favObj = {
       userId: id,
       film: []
@@ -92,10 +92,9 @@ export class FavoritesService {
 
     console.log('Resetting favorites for user:', id);
 
-    // Notifica i componenti ascoltatori
     this.favSubject.next(this.favObj);
 
-    // Invia i preferiti aggiornati al database
+
     this.postFavsToDb();
   }
 

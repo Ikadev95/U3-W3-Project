@@ -23,10 +23,6 @@ export class FilmsComponent implements OnInit {
   })
     this.FilmsSvc.getAllFilms().subscribe(
       films => { this.films = films}
-
-    )
-    this.prefSvc.getAllFavs().subscribe(
-      favs => console.log(favs)
     )
     this.prefSvc.getFavsById(this.id).subscribe(
       fav => this.prefSvc.favObj = fav

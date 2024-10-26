@@ -24,7 +24,7 @@ export class AuthsrvService {
   autoLogoutTimer: any;
 
   authSubject$ = new BehaviorSubject<iAccessData | null>(null);
-  // Subject che memorizza i dati di accesso dell'utente, inclusi i token
+
 
   user$ = this.authSubject$.asObservable()
     .pipe(
@@ -45,20 +45,19 @@ export class AuthsrvService {
     this.restoreUser();
   }
 
-  // Metodo per registrare un nuovo utente
+
 register(newUser: Partial<iUser>) {
   return this.http.post<iAccessData>(this.registerUrl, newUser)
     .pipe(
       tap((data) => {
-        // Qui si presume che 'data' contenga l'ID dell'utente registrato
-        const userId = data.user.id; // Assicurati che 'user' contenga l'ID
+
+        const userId = data.user.id;
         this.svc.resetFavorites(userId);
       })
     );
 }
 
 
-  // Metodo per il login
   login(authData: iLoginRequest) {
     console.log(authData);
     return this.http.post<iAccessData>(this.loginUrl, authData)
@@ -71,9 +70,9 @@ register(newUser: Partial<iUser>) {
       }));
   }
 
-  // Metodo per il logout
+
   logout() {
-    this.svc.AddFavToDb();
+    this.svc.updateFavsToDb();
     this.authSubject$.next(null);
     localStorage.removeItem('data');
     this.router.navigate(['/auth/login']);
@@ -84,7 +83,7 @@ register(newUser: Partial<iUser>) {
   autoLogout(expDate: Date) {
     const expMs = expDate.getTime() - new Date().getTime();
     this.autoLogoutTimer = setTimeout(() => {
-      this.svc.AddFavToDb();
+      this.svc.updateFavsToDb();
       this.logout();
     }, expMs);
   }

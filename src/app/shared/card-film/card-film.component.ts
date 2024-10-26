@@ -18,7 +18,6 @@ export class CardFilmComponent implements OnInit {
   ngOnInit(): void {
 
     this.favSvc.favs$.subscribe(favObj => {
-
       this.fav = favObj.film.some(f => f.id === this.film.id);
     });
 
@@ -31,7 +30,7 @@ export class CardFilmComponent implements OnInit {
     });
   }
 
-  addToFav(): void {
-    this.favSvc.addToFavs(this.film);
+  updateToFav(): void {
+    this.favSvc.updateFavs(this.film);
   }
 }
