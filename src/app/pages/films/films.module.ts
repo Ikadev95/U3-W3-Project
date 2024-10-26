@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { FilmsRoutingModule } from './films-routing.module';
 import { FilmsComponent } from './films.component';
 import { SharedModule } from "../../shared/shared.module";
+import { NgbNavModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { SharedModule } from "../../shared/shared.module";
   imports: [
     CommonModule,
     FilmsRoutingModule,
-    SharedModule
+    SharedModule,
+    NgbNavModule
 ]
 })
 export class FilmsModule { }
