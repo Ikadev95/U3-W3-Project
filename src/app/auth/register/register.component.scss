@@ -1,7 +1,21 @@
-form{
-  width: 400px;
-}
+
 i {
-  font-size: 60px;
-  color: red;
+  font-size: 24px;
+}
+form{
+  width: 100%;
+
+}
+
+.col{
+  width:100%
+}
+button{
+  width: 100%;
+}
+img{
+  width: 100%;
+  height: calc(100vh - 160px);
+  object-fit: cover;
+
 }

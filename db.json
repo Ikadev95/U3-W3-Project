@@ -29,6 +29,24 @@
       "password": "$2a$10$8oTJyWMQzDqgqIbPjBB4SOdgKJA80Vz1Dgsy3UcwYRPbnmL.UFRCe",
       "name": "ciccio",
       "id": 5
+    },
+    {
+      "email": "fede@gmail.com",
+      "password": "$2a$10$8DhPEpDASkIjCIKH46nIXuvpIRA25ktkpEv/huvMGiCTSU1jzrGle",
+      "name": "paolo",
+      "id": 6
+    },
+    {
+      "email": "prova4@gmail.com",
+      "password": "$2a$10$hi6.2zTq9aqhpz/HWlzP0.ZQnTEtVsB83UzSa6W90uwPDe85PH.tW",
+      "name": "prova4",
+      "id": 7
+    },
+    {
+      "email": "ikapro@gmail.it",
+      "password": "$2a$10$35K7i.e4LCdBshJlLOjX0ew4LK72b6ztBcsAOIKeZH5.Z.KaziePC",
+      "name": "ikapro",
+      "id": 8
     }
   ],
   "movies-popular": [
@@ -129,6 +147,26 @@
       "id": 5
     },
     {
+      "userId": 4,
+      "film": [],
+      "id": 4
+    },
+    {
+      "userId": 6,
+      "film": [],
+      "id": 6
+    },
+    {
+      "userId": 7,
+      "film": [],
+      "id": 7
+    },
+    {
+      "userId": 8,
+      "film": [],
+      "id": 8
+    },
+    {
       "userId": 1,
       "film": [
         {
@@ -148,20 +186,9 @@
           "titolo": "The Dark Knight",
           "data_di_uscita": "2008-07-18",
           "link_immagine": "https://m.media-amazon.com/images/I/81rGCm0PyHL.jpg"
-        },
-        {
-          "id": 2,
-          "titolo": "The Matrix",
-          "data_di_uscita": "31-03-1999",
-          "link_immagine": "https://c8.alamy.com/compit/2jh2n9a/pantoliano-fishburne-reeves-poster-la-matrice-1999-2jh2n9a.jpg"
         }
       ],
       "id": 1
-    },
-    {
-      "userId": 4,
-      "film": [],
-      "id": 4
     }
   ]
 }

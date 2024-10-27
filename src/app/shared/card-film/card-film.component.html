@@ -1,5 +1,5 @@
-<div class="card border-0 ">
-  <img [src]="film.link_immagine" class="card-img-top" alt="{{film.titolo}}">
+<div class="card border-0 rounded-3 ">
+  <img [src]="film.link_immagine" class="card-img-top rounded-3" alt="{{film.titolo}}">
 
   <i *ngIf="!fav" class="fa-heart fa-regular heart" (click)="updateToFav()"></i>
   <i *ngIf="fav" class="fa-heart fa-solid heart" (click)="updateToFav()"></i>
