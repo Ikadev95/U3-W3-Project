@@ -1,7 +1,19 @@
 <div class="container py-3">
-  <h2>Users</h2>
-  <ul >
-    <li *ngFor="let user of users">email: {{user.email}}</li>
-  </ul>
+	<h2>Users</h2>
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th scope="col" sortable="id" >#</th>
+				<th scope="col" sortable="name" >Name</th>
+				<th scope="col" sortable="email" >Email</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr *ngFor="let user of users">
+				<th scope="row">{{ user.id }}</th>
+				<td>{{ user.name }}</td>
+				<td>{{ user.email }}</td>
+			</tr>
+		</tbody>
+	</table>
 </div>
-

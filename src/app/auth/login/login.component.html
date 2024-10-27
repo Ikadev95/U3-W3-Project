@@ -1,32 +1,49 @@
 <div class="fluid-container py-5 container-xxl px-xxl-0 px-3">
+  <div class="row">
+    <div class="col-12 col-lg-5">
+      <form [formGroup]="loginForm" (ngSubmit)="login()" class="form-signin py-5 px-md-4 px-2 rounded-3">
+        <h1 class="h3 my-3 font-weight-normal text-center">Bentornato su Plex!</h1>
+        <p class="p text-center">Pronto per un'altra esperienza cinematografica? Scopri nuovi film e rivivi i tuoi preferiti!</p>
 
-<div class="row">
+        <label for="inputEmail" class="mt-3">Email</label>
+        <input
+          type="email"
+          id="inputEmail"
+          formControlName="email"
+          class="form-control"
+          placeholder="prova@gmail.com"
+        />
+        <span class="text-danger" *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched">
+          devi inserire una mail valida
+        </span>
 
-  <div class="col-12 col-lg-5">
-    <form class="form-signin py-5 px-md-4 px-2 rounded-3" (ngSubmit)="submit(f)" #f="ngForm">
+        <label for="inputPassword" class="mt-3 d-block">Password</label>
+        <input
+          type="password"
+          id="inputPassword"
+          formControlName="password"
+          class="form-control"
+          placeholder="password"
+        />
+        <span class="text-danger" *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">
+          devi inserire una password valida
+        </span>
 
-      <h1 class="h3 my-3 font-weight-normal text-center"> Bentornato su Plex! </h1>
-      <p class="p text-center">  Pronto per un'altra esperienza cinematografica? Scopri nuovi film e rivivi i tuoi preferiti!</p>
+        <div class="mt-4">
+          <button type="submit" class="btn btn-primary" [disabled]="loginForm.invalid">Login</button>
+          <p class="text text-center mt-2">
+            Non hai ancora un account? <a routerLink="register">Registrati</a>
+          </p>
+        </div>
 
-      <label for="inputEmail" class="mt-3">Email </label>
-      <input type="email" id="inputEmail" class="form-control" placeholder="prova@gmail.com" ngModel #mail ="ngModel" [(ngModel)]="formData.email" required [ngModelOptions]="{standalone: true}">
-      <span class="text-danger" *ngIf="mail.invalid && mail.touched">You must enter your email</span>
+        <div *ngIf="!formValid" class="alert alert-danger mt-3" role="alert">
+          Form non valido, inserisci tutti i campi
+        </div>
+      </form>
+    </div>
 
-
-      <label for="inputPassword" class="mt-3 d-block">Password</label>
-      <input type="password" id="inputPassword" class="form-control " placeholder="password"  [(ngModel)]="formData.password" required #password ="ngModel" [ngModelOptions]="{standalone: true}">
-      <span class="text-danger" *ngIf="password.invalid && password.touched">You must enter your password</span>
-
-      <div class="mt-4">
-        <button (click)="login()" class="btn btn-primary" [disabled]="f.invalid">Login</button>
-       <p class="text text-center mt-2"> non hai ancora un account? <a routerLink="register" >Registrati</a></p>
-      </div>
-    </form>
+    <div class="col-12 col-md-5 col-lg-7">
+      <img class="d-none d-lg-block rounded-4" src="https://il-cubo.it/images/cover19.jpg" />
+    </div>
   </div>
-
-  <div class="col-12 col-md-5 col-lg-7 ">
-  <img class="d-none d-lg-block rounded-4" src="https://il-cubo.it/images/cover19.jpg">
-  </div>
-</div>
-
 </div>

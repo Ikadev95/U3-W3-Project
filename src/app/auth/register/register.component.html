@@ -32,7 +32,7 @@
       form non valido, inserisci tutti i campi
     </div>
 
-    <button (click)="register()" class="btn btn-primary mt-4">Registrati</button>
+    <button (click)="register()" class="btn btn-primary mt-4" [disabled]="form.invalid">Registrati</button>
   </form>
     </div>
 

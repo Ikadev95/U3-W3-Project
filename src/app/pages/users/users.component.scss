@@ -8,3 +8,7 @@ ul{
 .container{
   min-height: 100vh;
 }
+.table > :not(caption) > * > *{
+  background-color: transparent;
+  color: white;
+}
